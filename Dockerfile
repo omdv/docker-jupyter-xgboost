@@ -14,6 +14,9 @@ ENV PYTHONPATH ~/xgboost/python-package
 # xgboost python install
 RUN cd xgboost/python-package \
     && python setup.py install
+
+RUN pip2 install ./xgboost/python-package
+RUN conda install -n python2 xgboost
     
 #RUN . /opt/conda/bin/activate python2 \
 #    && cd xgboost/python-package \
