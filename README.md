@@ -25,6 +25,7 @@ docker run -d -p 8888:8888 -p 6006:6006 omdv/jupyter-datascience
 To share the host directory on Mac OS or Windows you need an extra step to share your host directory with Virtual Box VM first. Follow [this guide](http://digitaldrummerj.me/docker-windows-mounting-directories/).
 
 The key steps are the following (adjust names to your needs):
+
 1. Stop the default docker-machine
 
 2. Share the host folder with Virtual Box VM. You can do it either using the Virtual Box UI or in terminal like so:
