@@ -41,7 +41,7 @@ docker-machine ssh default "sudo mount -t vboxsf notebooks /var/notebooks"
 
 4. Run docker and mount the created folder to `/home/jovyan/work`:
 ```
-docker run -d -p 8888:8888 -p 6006:6006 --name jupyter -v /var/notebooks:/home/jovyan/work/ omdv/jupyter-spark-xgboost
+docker run -d -p 8888:8888 -p 6006:6006 -v /var/notebooks:/home/jovyan/work/ omdv/jupyter-spark-xgboost
 ```
 
 For further examples of please refer to the original [jupyter repository](https://github.com/jupyter/docker-stacks/tree/master/all-spark-notebook) for details.
