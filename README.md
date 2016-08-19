@@ -8,8 +8,8 @@ You can modify the Dockerfile to use the different jupyter image as a starting p
 
 ### Same packages as a starting notebook and:
 * [xgboost](https://github.com/dmlc/xgboost)
-* Google's Tensorflow
-* OpenAI Gym
+* [TensorFlow](https://www.tensorflow.org/)
+* [OpenAI Gym](https://gym.openai.com/)
 
 
 ## Basic Use
@@ -38,10 +38,17 @@ The key steps are the following (adjust names to your needs):
   docker-machine ssh default "sudo mkdir --parents mkdir /var/notebooks"
   docker-machine ssh default "sudo mount -t vboxsf notebooks /var/notebooks"
   ```
+  Unfortunately the `automount` option does not behave as expected, so you may need to re-mount the folder every time after you restart the VM.
 
 4. Run docker and mount the created folder to `/home/jovyan/work`:
   ```
-  docker run -d -p 8888:8888 -p 6006:6006 -v /var/notebooks:/home/jovyan/work/ omdv/jupyter-spark-xgboost
+  docker run -d -p 8888:8888 -p 6006:6006 --name jupyter -v /var/notebooks:/home/jovyan/work/ omdv/jupyter-spark-xgboost
   ```
 
-For further examples of please refer to the original [jupyter repository](https://github.com/jupyter/docker-stacks/tree/master/all-spark-notebook) for details.
+5. After you launched the container you connect to it to run python in bash:
+  ```
+  docker exec -it jupyter /bin/bash
+  ```
+
+
+For further examples of usage please refer to the original [jupyter repository](https://github.com/jupyter/docker-stacks/tree/master/all-spark-notebook) for details.
