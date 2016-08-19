@@ -1,25 +1,12 @@
 # docker-jupyter-xgboost
 
-This image is based on the [opinionated stacks](https://github.com/jupyter/docker-stacks) of ready-to-run Jupyter applications in Docker. In particular it is an extension of 'all-spark-notebook' with addition of xgboost, tensorflow and openAI gym libraries.
+Collection of docker images based on the [opinionated stacks](https://github.com/jupyter/docker-stacks) of ready-to-run Jupyter applications in Docker. Official jupyter images are extended with xgboost, tensorflow and openAI gym libraries.
 
-## Jupyter Notebook Python, Scala, R, Spark, Mesos Stack
+You can modify the Dockerfile to use the different jupyter image as a starting point.
 
 ## What it Gives You
 
-### Same packages as all-spark-notebook:
-* Jupyter Notebook 4.2.x
-* Conda Python 3.x and Python 2.7.x environments
-* Conda R 3.3.x environment
-* Scala 2.10.x
-* pyspark, pandas, matplotlib, scipy, seaborn, scikit-learn pre-installed for Python
-* ggplot2, rcurl preinstalled for R
-* Spark 1.6.0 for use in local mode or to connect to a cluster of Spark workers
-* Mesos client 0.22 binary that can communicate with a Mesos master
-* Unprivileged user `jovyan` (uid=1000, configurable, see options) in group `users` (gid=100) with ownership over `/home/jovyan` and `/opt/conda`
-* [tini](https://github.com/krallin/tini) as the container entrypoint and [start-notebook.sh](../base-notebook/start-notebook.sh) as the default command
-* A [start-singleuser.sh](../base-notebook/start-singleuser.sh) script useful for running a single-user instance of the Notebook server, as required by JupyterHub
-* A [start.sh](../base-notebook/start.sh) script useful for running alternative commands in the container (e.g. `ipython`, `jupyter kernelgateway`, `jupyter lab`)
-* Options for HTTPS, password auth, and passwordless `sudo`
+### Same packages as a starting notebook.
 
 ### and:
 * [xgboost](https://github.com/dmlc/xgboost)

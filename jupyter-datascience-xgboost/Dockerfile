@@ -1,4 +1,4 @@
-FROM jupyter/all-spark-notebook
+FROM jupyter/datascience-notebook
 
 MAINTAINER ole.bjorne@gmail.com
 
