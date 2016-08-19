@@ -11,8 +11,8 @@ RUN conda install -y gcc
 # download and build xgboost
 RUN cd /opt && \
 	git clone --recursive https://github.com/dmlc/xgboost && \
-    cd xgboost && \
-    make -j4
+  cd xgboost && \
+  make -j4
 
 # set environment var to python package for both python2 and python3
 ENV PYTHONPATH /opt/xgboost/python-package
@@ -36,6 +36,6 @@ RUN cd /opt && \
 	git clone https://github.com/openai/gym && \
 	cd gym && \
 	pip2 install -e . && \
-    pip3 install -e .
+  pip3 install -e .
 
 USER $NB_USER
