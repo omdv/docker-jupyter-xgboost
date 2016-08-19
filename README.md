@@ -2,10 +2,6 @@
 
 This image is based on the [opinionated stacks](https://github.com/jupyter/docker-stacks) of ready-to-run Jupyter applications in Docker. In particular it is an extension of 'all-spark-notebook' with addition of xgboost, tensorflow and openAI gym libraries.
 
-[![Image inheritance diagram](internal/inherit-diagram.png)](http://interactive.blockdiag.com/?compression=deflate&src=eJyFzrEOgjAQgOGdp2jcuxsJRjZ3R2PMlR54UtqmPQc0vrutW2Fg_e-7yynjulETDOJTCeECoWVgclY0wrvAAYjrNNHYw8vwvXeWI70xjfe5t-JqQKFpdhoVgT08MUbC0-Xc7m519RfyKBRElNYxKufGvFeELCayNIEp0LJlFzvyc6HKko0GhlTRdrh5L2zc8nP0EMZCLVt2YIxcy3XNlh8UZfpkwLr6_gCxAYQT)
-
-![docker pulls](https://img.shields.io/docker/pulls/jupyter/all-spark-notebook.svg) ![docker stars](https://img.shields.io/docker/stars/jupyter/all-spark-notebook.svg)
-
 ## Jupyter Notebook Python, Scala, R, Spark, Mesos Stack
 
 ## What it Gives You
@@ -25,7 +21,7 @@ This image is based on the [opinionated stacks](https://github.com/jupyter/docke
 * A [start.sh](../base-notebook/start.sh) script useful for running alternative commands in the container (e.g. `ipython`, `jupyter kernelgateway`, `jupyter lab`)
 * Options for HTTPS, password auth, and passwordless `sudo`
 
-### And:
+### and:
 * [xgboost](https://github.com/dmlc/xgboost)
 * Google's Tensorflow
 * OpenAI Gym
@@ -41,4 +37,4 @@ docker run -d -p 8888:8888 omdv/jupyter-datascience
 
 ## Advanced use
 
-Please refer to the original [jupyter repository](https://github.com/jupyter/docker-stacks/tree/master/all-spark-notebook) 
+Please refer to the original [jupyter repository](https://github.com/jupyter/docker-stacks/tree/master/all-spark-notebook) for details.
