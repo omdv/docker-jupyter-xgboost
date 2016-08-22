@@ -10,9 +10,9 @@ RUN conda install -y gcc
 
 # download and build xgboost
 RUN cd /opt && \
-	git clone --recursive https://github.com/dmlc/xgboost && \
-    cd xgboost && \
-    make -j4
+  git clone --recursive https://github.com/dmlc/xgboost && \
+  cd xgboost && \
+  make -j4
 
 # set environment var to python package for both python2 and python3
 ENV PYTHONPATH /opt/xgboost/python-package
@@ -28,14 +28,16 @@ ENV TF_BINARY_URL_PY3 https://storage.googleapis.com/tensorflow/linux/cpu/tensor
 
 # install python package for both environments
 RUN pip2 install $TF_BINARY_URL_PY2 && \
-	pip3 install $TF_BINARY_URL_PY3
+  pip3 install $TF_BINARY_URL_PY3
 
+# TensorBoard port
+EXPOSE 6006
 
 # -------Install OpenAI gym --------
 RUN cd /opt && \
 	git clone https://github.com/openai/gym && \
 	cd gym && \
 	pip2 install -e . && \
-    pip3 install -e .
+  pip3 install -e .
 
 USER $NB_USER
